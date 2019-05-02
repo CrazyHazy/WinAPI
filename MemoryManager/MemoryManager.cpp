@@ -213,7 +213,7 @@ UINT32 MemoryManager::ToUINT32()
 	return temp;
 }
 
-int MemoryManager::ToINT32()
+INT32 MemoryManager::ToINT32()
 {
 	INT32 temp = 0;
 	memcpy(m_buffer, &temp, sizeof(INT32));
