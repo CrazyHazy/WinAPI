@@ -8,7 +8,6 @@ MemoryManager::MemoryManager(const char* proc_name, size_t buffer_size) : m_buff
 	int len = strlen(proc_name) + 1;
 	m_pName = new char[len];
 	strcpy_s(m_pName, len, proc_name);
-
 	m_buffer = new byte[buffer_size];
 }
 
@@ -143,7 +142,6 @@ DWORD MemoryManager::FindSignature(DWORD base, DWORD size, byte * sign, char * m
 	}
 
 	return 0;
-
 }
 
 
@@ -171,7 +169,8 @@ MemoryManager & MemoryManager::Read(DWORD from, size_t size, DWORD mem_protect)
 
 DWORD MemoryManager::ReadPointer(DWORD base, DWORD * offset, size_t count)
 {
-	for (int i = 0; i < count - 1; i++) {
+	for (int i = 0; i < count - 1; i++)
+	{
 		base = Read(base + offset[i], 4).ToUINT32();
 	}
 	return base + offset[count - 1];
