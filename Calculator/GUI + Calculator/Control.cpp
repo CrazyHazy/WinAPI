@@ -1,9 +1,5 @@
 #include "Control.h"
 
-
-
-
-
 Control::Control(HWND hParent, int id)
 {
 	m_hWnd = GetDlgItem(hParent, id);
